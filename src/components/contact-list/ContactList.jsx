@@ -1,11 +1,17 @@
-import Contact from "../contact/Contact.jsx";
+import Contact from "../contact/Contact";
 
-const ContactList = () => {
+const ContactList = ({ contactsList }) => {
   return (
     <>
       <p>ContactList</p>
       <ul>
-        <Contact />
+        {contactsList.map((contactItem) => (
+          <Contact
+            key={contactItem.id}
+            name={contactItem.name}
+            number={contactItem.number}
+          />
+        ))}
       </ul>
     </>
   );

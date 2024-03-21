@@ -1,8 +1,12 @@
-const SearchBox = () => {
+import { useId } from "react";
+
+const SearchBox = ({ inputValue, handleChange }) => {
+  const id = useId();
   return (
-    <>
-      <p>SearchBox</p>
-    </>
+    <div>
+      <label htmlFor={id}>Find contacts by name</label>
+      <input type="text" id={id} value={inputValue} onChange={handleChange} />
+    </div>
   );
 };
 
