@@ -2,7 +2,7 @@ import css from "./Contact.module.css";
 
 import { BsPersonFill, BsFillTelephoneFill } from "react-icons/bs";
 
-const Contact = ({ name, number }) => {
+const Contact = ({ name, number, handleDelete }) => {
   return (
     <li className={css.item}>
       <div>
@@ -15,7 +15,7 @@ const Contact = ({ name, number }) => {
           <p className={css.number}>{number}</p>
         </div>
       </div>
-      <button type="button" className={css.button}>
+      <button onClick={handleDelete} type="button" className={css.button}>
         Delete
       </button>
     </li>
